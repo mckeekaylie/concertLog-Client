@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Auth from './auth/Auth';
 import ConcertIndex from './concerts/ConcertIndex';
+import BucketListIndex from './bucketList/BucketListIndex';
 import Sitebar from './nav/navbar';
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
 
   const protectedViews = () => {
     return(sessionToken === localStorage.getItem('token') ? <ConcertIndex token={sessionToken} /> 
-    : <Auth updateToken={updateToken} /> )
-  }
+    : <Auth updateToken={updateToken} /> 
+    )}
 
   return (
     <div>

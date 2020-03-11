@@ -1,0 +1,39 @@
+.bucketListWrapper {
+    background-color: whitesmoke;
+    width: 35em;
+    height: 50em;
+    text-align: center;
+    list-style-type: none;
+}
+
+.redX {
+    cursor: pointer;
+    color: red;
+}
+
+.bucketListCreate {
+    padding: 2em;
+}
+
+.bucketListBandWrapper {
+    height: 2em;
+    overflow: auto;
+    list-style-type: none;
+}
+
+
+.bucketListSubmit {
+    background-color: #29b5d5;
+    border: none;
+    color: black;
+}
+
+.bucketListSubmit:hover {
+    background-color: #9F4FE8;
+}
+
+.bucketListHeader {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #29b5d5;
+}

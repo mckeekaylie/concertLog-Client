@@ -3,6 +3,7 @@ import {Container, Row, Col} from 'reactstrap';
 import ConcertCreate from './ConcertCreate';
 import ConcertEdit from './ConcertEdit';
 import ConcertTable from './ConcertTable';
+import BucketListIndex from '../bucketList/BucketListIndex';
 import './concerts.css';
 
 const ConcertIndex = (props) => {
@@ -53,6 +54,11 @@ const ConcertIndex = (props) => {
                 </Col>
                 {modalActive ? <ConcertEdit concert={concert} concertToEdit={concertToEdit}
                 modalOff={modalOff} token={props.token} fetchConcerts={fetchConcerts}/> : <></>}
+            </Row>
+            <Row>
+                <Col md='9'>
+                    <BucketListIndex token={props.token}/>
+                </Col>
             </Row>
         </Container>
     )

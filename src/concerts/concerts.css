@@ -36,6 +36,10 @@ form {
     border: none;
 }
 
+.logConcert:hover {
+    background-color: #29b5d5;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 576px) {
