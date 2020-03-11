@@ -12,7 +12,7 @@ const ConcertEdit = (props) => {
         event.preventDefault();
         fetch(`http://localhost:3001/log/concert/${props.concertToEdit.id}`, {
             method: 'PUT',
-            body: JSON.stringify({date: editDate, title: editTitle, bands: editBands, venue: editVenue}),
+            body: JSON.stringify({date: editDate, title: editTitle, bands: [editBands], venue: editVenue}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
@@ -25,14 +25,17 @@ const ConcertEdit = (props) => {
 
     //delete
     const deleteConcert = () => {
-        fetch(`http://localhost:3001/log/concert/${props.concert.id}`, {
+        fetch(`http://localhost:3001/log/concert/${props.concertToEdit.id}`, {
             method: 'DELETE',
             headers: new Headers ({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
              })
         })
-            .then(() => props.fetchConcerts())
+            .then(() => {
+                props.fetchConcerts();
+                props.modalOff();
+            })
     }
 
 

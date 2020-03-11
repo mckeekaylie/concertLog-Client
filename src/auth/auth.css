@@ -1,36 +1,88 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 
-body{
-    background-image: url('../assets/auth.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-}
-
-.authParent {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-}
-
-.auth {
-    position:absolute;
-    top:50%;
-    left:50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-}
-
 #appTitle {
     margin-top: 7%;
     text-align: center;
     font-size: 5em;
     font-family: 'Rock Salt', cursive;
+    color: #F5384C;
+}
+
+/* BOTH SIGNUP & SIGN IN */
+.authRow {
+    margin-top: 5em;
 }
 
 form {
     width: 30em;
 }
+
+/* SIGNIN */
+.signin {
+    background-color: white;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.signin h1 {
+    color: #9F4FE8;
+}
+
+/* SIGNUP */
+.signup {
+    background-color: white;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.signup h1 {
+    color: #9F4FE8;
+}
+
+/* BUTTON */
+.signinUp {
+    background-color: #F5384C;
+    border: none;
+}
+
+.signinUp:hover {
+    background-color: #9F4FE8;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 576px) {
+    .authRow {
+        margin-top: 0;
+    }
+
+    #appTitle {
+        font-size: 8mm;
+    }
+
+    .signin {
+        padding: 0;
+        margin: 2em;
+    }
+
+    .signup {
+        padding: 0;
+        padding-bottom: 1em;
+        margin: 2em;
+        margin-bottom: 0;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .authRow {
+        padding-bottom: 20em;
+    }
+}
+
+
+

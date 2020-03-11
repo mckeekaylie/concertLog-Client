@@ -6,20 +6,23 @@ const ConcertTable = (props) => {
     
     //display concert logs
     const concertMapper = () => {
-        return props.concert.map((concert, index) => {
-            return(
+        const copyData = [].concat(props.concert)
+        .sort((a, b) => new Date(b.date) - new Date (a.date))
+        .map((concert, index) => {
+            return (
                 <tr key={index}>
-                    <td>{concert.date}</td>
-                    <td>{concert.title}</td>
-                    <td>{concert.bands}</td>
-                    <td>{concert.venue}</td>
-                    
-                    <td>
-                        <Button color='none' onClick={() => {props.editConcert(concert); props.modalOn()}}><img src={edit} style={editIconStyle} /></Button>
-                    </td>
-                </tr>
+                <td>{concert.date}</td>
+                <td>{concert.title}</td>
+                <td>{concert.bands}</td>
+                <td>{concert.venue}</td>
+                
+                <td>
+                    <Button color='none' onClick={() => {props.editConcert(concert); props.modalOn()}}><img src={edit} style={editIconStyle} /></Button>
+                </td>
+            </tr>
             )
-        })
+        }) 
+        return copyData
     }
 
     const editIconStyle = {
@@ -27,8 +30,7 @@ const ConcertTable = (props) => {
     }
 
     return(
-        <>
-            <h3>My Concert History</h3>
+        <div className='tableContainer'>
             <Table striped>
                 <thead>
                     <tr> 
@@ -43,7 +45,7 @@ const ConcertTable = (props) => {
                     {concertMapper()}
                 </tbody>
             </Table>
-        </>
+        </div>
     )
  }
 

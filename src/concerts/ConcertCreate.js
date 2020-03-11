@@ -30,7 +30,7 @@ import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
      }
 
      return(
-         <div>
+         <div className='logContainer'>
              <h3>Log a Concert</h3>
              <Form onSubmit={handleSubmit}>
                  <FormGroup>
@@ -45,7 +45,7 @@ import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
                  <FormGroup>
                      <Input placeholder='Venue' onChange={(e) => setVenue(e.target.value)} name='venue' value={venue} />
                  </FormGroup>
-                 <Button type='submit'>Submit</Button>
+                 <Button className='logConcert' type='submit'>Submit</Button>
              </Form>
          </div>
      )

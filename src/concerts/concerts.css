@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
 body {
-    background-image: url('../assets/index.jpg');
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -13,14 +12,7 @@ body {
 .table {
     background-color: white;
     height: 35em;
-    margin-top: 2em;
-    padding-top: 1em;
     overflow: auto;
-
-}
-
-.tableHeaders {
-    width: 10em;
 }
 
 .create {
@@ -28,7 +20,6 @@ body {
     color: black;
     height: 100%;
     text-align: center;
-    margin-top: 2em;
     padding: 1em;
 }
 
@@ -40,10 +31,56 @@ form {
     padding-bottom: 1em;
 }
 
-/*
+.logConcert {
+    background-color: #F5384C;
+    border: none;
+}
+
+/* MEDIA QUERIES */
+
 @media (max-width: 576px) {
     .table{
-        width: 25em;
+        display: block;
+        margin: auto;
+        width: 20em;
+        padding: 0;
+    }
+
+    .create {
+        display: block;
+        margin: auto;
+        margin-top: 2em;
+        max-width: 100%;
+    }
+
+    .logContainer {
+        width: 18em;
     }
 }
-*/
+
+
+@media (max-width: 400px) {
+    .table{
+        width: 15em;
+    }
+    .logContainer {
+        width: 13em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .table{
+        display: block;
+        margin: auto;
+        max-width: 100%;  
+        flex: 100%;
+    }
+
+    .create {
+        display: block;
+        margin: auto;
+        margin-top: 2em;
+        max-width: 100%;
+        flex: 0 0 75%;
+    }
+}

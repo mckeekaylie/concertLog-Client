@@ -21,7 +21,7 @@ const Signup = (props) => {
     }
 
     return(
-        <div>
+        <div className='signup'>
             <h1>Signup</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -32,7 +32,7 @@ const Signup = (props) => {
                     <Label htmlFor='password'>Password</Label>
                     <Input type='password' onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
                 </FormGroup>
-            <Button type='submit'>Signup</Button>
+            <Button className='signinUp' type='submit'>Signup</Button>
             </Form>
         </div>
 

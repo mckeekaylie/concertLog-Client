@@ -7,9 +7,9 @@ import './auth.css';
 
 const Auth = (props) => {
     return (
-       <Container className='authParent'>
+       <Container>
             <h1 id='appTitle'>My Concert Log</h1>
-        <Container className='auth'>
+        <Container>
             <Row className='authRow'>
                 <Col className='signup'> 
                     <Signup updateToken={props.updateToken} />

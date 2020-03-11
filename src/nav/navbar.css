@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 
 .nav {
-    background-color: #9F4FE8;
-}
-
-button {
-    background-color: none;
-}
-
-img {
-    width: 2em;
+    background-color: #F5384C;
+    color: black;
+    height: 3.5em;
 }
 
 .brand {
     font-family: 'Rock Salt', cursive;
+}
+
+.logout {
+    cursor: pointer;
+}
+
+.logout:hover {
     color: white;
 }
+
+

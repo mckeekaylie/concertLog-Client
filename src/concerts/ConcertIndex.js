@@ -10,7 +10,6 @@ const ConcertIndex = (props) => {
     const [concertToEdit, setConcertToEdit] = useState({});
     const [modalActive, setModalActive] = useState(false);
 
-
     const fetchConcerts = () => {
         fetch('http://localhost:3001/log/concert', {
             method: 'GET',

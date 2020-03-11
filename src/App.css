@@ -1,3 +1,5 @@
-.App {
-  text-align: center;
+body{
+  background-image: url('assets/index.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
