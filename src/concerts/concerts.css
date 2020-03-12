@@ -1,20 +1,36 @@
+/* FONT */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* COUNTER H1 */
+.counterRow {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 1em;
+}
+
+.numColor {
+    color: #29b5d5;
+    font-weight: 700;
+}
+
+/* CONTAINER THAT HOLDS ALL CONTENT */
 .index {
     margin-top: 2em;
     margin-bottom: 3em;
 }
 
+/* LOG TABLE */
 .table {
     background-color: white;
     height: 35em;
     overflow: auto;
 }
 
+/* ADD A CONCERT FORM */
 .create {
     background-color: #9F4FE8;
     color: black;
@@ -27,10 +43,7 @@ form {
     width: 100%;
 }
 
-.editConcert {
-    padding-bottom: 1em;
-}
-
+/* ADD A CONCERT FORM BUTTON */
 .logConcert {
     background-color: #F5384C;
     border: none;
@@ -40,12 +53,25 @@ form {
     background-color: #29b5d5;
 }
 
-/* MEDIA QUERIES */
+/* EDIT MODAL */
+.editConcert {
+    padding-bottom: 1em;
+}
 
+
+/* MEDIA QUERIES */
 @media (max-width: 576px) {
+    .counterRow {
+        display: block;
+        margin: auto;
+        
+        text-align: center;
+    }
+
     .table{
         display: block;
         margin: auto;
+        margin-top: 2em;
         width: 20em;
         padding: 0;
     }
@@ -73,10 +99,21 @@ form {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .counterRow {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+    }
+    
     .table{
         display: block;
         margin: auto;
-        max-width: 100%;  
+        max-width: 90%;  
         flex: 100%;
     }
 

@@ -26,13 +26,12 @@ function App() {
   }
 
   const protectedViews = () => {
-    return(sessionToken === localStorage.getItem('token') ? <ConcertIndex token={sessionToken} /> 
+    return(sessionToken === localStorage.getItem('token') ? <ConcertIndex token={sessionToken} clearToken={clearToken}/> 
     : <Auth updateToken={updateToken} /> 
     )}
 
   return (
     <div>
-      <Sitebar clickLogout={clearToken}/>
       {protectedViews()}
     </div>
 

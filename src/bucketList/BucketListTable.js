@@ -34,14 +34,12 @@ const BucketListTable = (props) => {
             }
             return 0;
         })
-        .map((band) => {
+        .map((band, index) => {
             return (
-                <ul className='bucketListBandWrapper'>
-                        <li>
-                            {band.bands}
-                            <Button className='redX' color='none' onClick={() => deleteFunc(band.id)}>X</Button>
-                        </li>
-                    </ul>
+                <li key={index}>
+                    {band.bands}
+                    <Button className='redX' color='none' onClick={() => deleteFunc(band.id)}>X</Button>
+                </li>
             )
         }) 
         return copyData
@@ -92,7 +90,9 @@ const BucketListTable = (props) => {
             </div>
             {BucketListCreate()}
             <hr></hr>
-            {bucketListMapper()}
+            <ul className='bandList'>
+                {bucketListMapper()}
+            </ul>
         </div>
     )
 

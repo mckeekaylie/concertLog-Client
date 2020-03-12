@@ -4,6 +4,7 @@ import ConcertCreate from './ConcertCreate';
 import ConcertEdit from './ConcertEdit';
 import ConcertTable from './ConcertTable';
 import BucketListIndex from '../bucketList/BucketListIndex';
+import Sitebar from '../nav/navbar';
 import './concerts.css';
 
 const ConcertIndex = (props) => {
@@ -25,42 +26,56 @@ const ConcertIndex = (props) => {
         })
     }
 
-        const editConcert = (concert) => {
-            setConcertToEdit(concert);
-            console.log(concert);
-        }
+    const editConcert = (concert) => {
+        setConcertToEdit(concert);
+        console.log(concert);
+    }
 
-        const modalOn = () => {
-            setModalActive(true);
-        }
+    const modalOn = () => {
+        setModalActive(true);
+    }
     
-        const modalOff = () => {
-            setModalActive(false);
-        }
+    const modalOff = () => {
+        setModalActive(false);
+    }
 
-        useEffect(() => {
-            fetchConcerts();
-        }, [])
-    
+    useEffect(() => {
+        fetchConcerts();
+    }, [])
+
+    const bandSumFunc = () => {
+        let bandSum = 0;
+
+        for(let i = 0; i < concert.length; i++){
+            bandSum += concert[i].bands.length;
+        }
+        return bandSum;
+    }
 
     return (
-        <Container className='index'>
-            <Row>
-                <Col md='9' className='table'>
-                    <ConcertTable concert={concert} editConcert={editConcert} modalOn={modalOn} fetchConcerts={fetchConcerts} token={props.token} />
-                </Col>
-                <Col xs='3' className='create'>
-                    <ConcertCreate fetchConcerts={fetchConcerts} token={props.token} />
-                </Col>
-                {modalActive ? <ConcertEdit concert={concert} concertToEdit={concertToEdit}
-                modalOff={modalOff} token={props.token} fetchConcerts={fetchConcerts}/> : <></>}
-            </Row>
-            <Row>
-                <Col md='9'>
-                    <BucketListIndex token={props.token}/>
-                </Col>
-            </Row>
-        </Container>
+        <div>
+            <Sitebar clickLogout={props.clearToken}/>
+            <Container className='index'>
+                <Row className='counterRow'>
+                    <h1 className='bandConcertSumH1'>You have attended <span className='numColor'>{concert.length}</span> concerts and seen <span className='numColor'>{bandSumFunc()}</span> bands.</h1>
+                </Row>
+                <Row>
+                    <Col md='9' className='table'>
+                        <ConcertTable concert={concert} editConcert={editConcert} modalOn={modalOn} fetchConcerts={fetchConcerts} token={props.token} />
+                    </Col>
+                    <Col xs='3' className='create'>
+                        <ConcertCreate fetchConcerts={fetchConcerts} token={props.token} />
+                    </Col>
+                    {modalActive ? <ConcertEdit concert={concert} concertToEdit={concertToEdit}
+                    modalOff={modalOff} token={props.token} fetchConcerts={fetchConcerts}/> : <></>}
+                </Row>
+                <Row>
+                    <Col md='9'>
+                        <BucketListIndex token={props.token}/>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     )
 }
 
