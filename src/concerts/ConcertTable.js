@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Table, Button} from 'reactstrap';
 import edit from '../assets/edit.png';
 
 const ConcertTable = (props) => {
     
-    //display concert logs
+    // FUNCTION THAT PULLS CONCERTS FROM THE CONCERT ARRAY TO BE DISPLAYED
     const concertMapper = () => {
         const copyData = [].concat(props.concert)
         .sort((a, b) => new Date(b.date) - new Date (a.date))
@@ -25,6 +25,7 @@ const ConcertTable = (props) => {
         return copyData
     }
 
+    // EDIT ICON STYLE
     const editIconStyle = {
         width: '1.5em'
     }

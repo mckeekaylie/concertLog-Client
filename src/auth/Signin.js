@@ -26,11 +26,11 @@ const Signin = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor='email'>Email</Label>
-                    <Input onChange = {(e) => setEmail(e.target.value)} name='email' value={email} />
+                    <Input placeholder='user@email.com' onChange = {(e) => setEmail(e.target.value)} name='email' value={email} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='password'>Password</Label>
-                    <Input type='password' onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
+                    <Input placeholder='Password' type='password' onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
                 </FormGroup>
                 <Button className='signinUp'type='submit'>Signin</Button>
             </Form>

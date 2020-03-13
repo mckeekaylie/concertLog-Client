@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './navbar.css';
-import icon from '../assets/logout.png';
 
 import {
     Navbar,
@@ -8,8 +7,7 @@ import {
     Collapse,
     NavbarToggler,
     Nav,
-    NavItem,
-    Button
+    NavItem
 } from 'reactstrap';
 
 const Sitebar = (props) => {

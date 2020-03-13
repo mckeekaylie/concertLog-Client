@@ -1,11 +1,21 @@
+/* BOOTSTRAP MANIPULATION */
 .col-md-9 {
     padding-left: 0;
     padding-right: 0;
 }
 
+.col {
+    padding-left: 0;
+}
+
 .container {
     padding-left: 0;
     padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* THE CONTAINER THAT HOLDS THE ENTIRE BUCKET LIST */
@@ -57,6 +67,11 @@
 
 /* MEDIA QUERIES */
 @media (max-width: 576px) {
+    .col {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .bucketListWrapper {
         display: block;
         margin: auto;
@@ -70,7 +85,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    
     .bucketListWrapper {
         display: block;
         margin: auto;

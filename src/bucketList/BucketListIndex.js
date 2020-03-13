@@ -27,7 +27,7 @@ const BucketListIndex = (props) => {
     return (
         <Container className='index'>
             <Row>
-                <Col md='7'>
+                <Col>
                     <BucketListTable band={band} fetchBucketList={fetchBucketList} token={props.token} />
                 </Col>
             </Row>

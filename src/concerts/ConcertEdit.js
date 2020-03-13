@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React, {useState} from 'react';
+import {Button, Form, FormGroup, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const ConcertEdit = (props) => {
     const[editDate, setEditDate] = useState(props.concertToEdit.date);
@@ -7,7 +7,7 @@ const ConcertEdit = (props) => {
     const[editBands, setEditBands] = useState(props.concertToEdit.bands);
     const[editVenue, setEditVenue] = useState(props.concertToEdit.venue);
 
-
+    // EDIT CONCERT
     const editConcert = (event, concert) => {
         event.preventDefault();
         fetch(`http://localhost:3001/log/concert/${props.concertToEdit.id}`, {
@@ -23,7 +23,7 @@ const ConcertEdit = (props) => {
         })
     }
 
-    //delete
+    // DELETE CONCERT
     const deleteConcert = () => {
         fetch(`http://localhost:3001/log/concert/${props.concertToEdit.id}`, {
             method: 'DELETE',
@@ -38,7 +38,7 @@ const ConcertEdit = (props) => {
             })
     }
 
-
+    // MODAL TOGGLE & STYLE
     const toggle = () => props.modalOff();
 
     const modalStyle = {

@@ -49,7 +49,7 @@ const BucketListTable = (props) => {
     const BucketListCreate = () => {
         const [bands, setBands] = useState([]);
 
-        /* WHAT HAPPENS WHEN THE ADD BAND FORM IS SUBMITTED */
+        // WHAT HAPPENS WHEN THE ADD BAND FORM IS SUBMITTED
         const handleSubmit = (e) => {
             e.preventDefault();
             let bandsList = bands.split(",");

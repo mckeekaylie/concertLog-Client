@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Auth from './auth/Auth';
 import ConcertIndex from './concerts/ConcertIndex';
-import BucketListIndex from './bucketList/BucketListIndex';
-import Sitebar from './nav/navbar';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');

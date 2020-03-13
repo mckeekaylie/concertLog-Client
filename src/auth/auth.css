@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 
+/* MY CONCERT LOG H1 */
 #appTitle {
     margin-top: 7%;
     text-align: center;
@@ -41,6 +42,11 @@ form {
 
 .signup h1 {
     color: #9F4FE8;
+}
+
+/* DISCLAIMER SPAN FOR SIGNUP */
+.disclaimer {
+    font-weight: 300;
 }
 
 /* BUTTON */

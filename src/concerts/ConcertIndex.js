@@ -12,6 +12,7 @@ const ConcertIndex = (props) => {
     const [concertToEdit, setConcertToEdit] = useState({});
     const [modalActive, setModalActive] = useState(false);
 
+    // FETCHING CONCERTS
     const fetchConcerts = () => {
         fetch('http://localhost:3001/log/concert', {
             method: 'GET',
@@ -26,11 +27,13 @@ const ConcertIndex = (props) => {
         })
     }
 
+    // SETTING CONCERT TO EDIT
     const editConcert = (concert) => {
         setConcertToEdit(concert);
         console.log(concert);
     }
 
+    // MODAL TOGGLE FUNCTIONS
     const modalOn = () => {
         setModalActive(true);
     }
@@ -39,10 +42,12 @@ const ConcertIndex = (props) => {
         setModalActive(false);
     }
 
+    // CALLING FETCH CONCERTS
     useEffect(() => {
         fetchConcerts();
     }, [])
 
+    // FUNCTION FOR DISPLAYING # OF BANDS SEEN
     const bandSumFunc = () => {
         let bandSum = 0;
 
@@ -70,7 +75,7 @@ const ConcertIndex = (props) => {
                     modalOff={modalOff} token={props.token} fetchConcerts={fetchConcerts}/> : <></>}
                 </Row>
                 <Row>
-                    <Col md='9'>
+                    <Col>
                         <BucketListIndex token={props.token}/>
                     </Col>
                 </Row>
