@@ -10,7 +10,7 @@ const Signup = (props) => {
         event.preventDefault();
 
         if(password.length < 8){
-            alert('Your password is not 8 characters long.')
+            alert('Your password is not at least 8 characters long.')
         } else {
             fetch('http://localhost:3001/user/signup', {
                 method: 'POST',
